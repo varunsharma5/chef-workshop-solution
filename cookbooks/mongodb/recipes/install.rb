@@ -5,12 +5,13 @@ template '/etc/yum.repos.d/mongodb.repo' do
   source 'mongodb.repo.erb'
 end
 
+# Install MongoDB
 package "mongodb-org" do
  action :install
  version '4.4.4'
 end
 
-
+# Start MongoDB
 service 'mongod' do
   action [:enable, :start]
 end
