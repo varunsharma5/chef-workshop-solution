@@ -1,6 +1,6 @@
 name 'mongodb'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'varun Sharma'
+maintainer_email 'varunge@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures mongodb'
 version '0.1.0'
