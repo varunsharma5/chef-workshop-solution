@@ -1,15 +1,14 @@
 # Overview
 
-Every Chef Infra installation needs a Chef Repository. This is the place where cookbooks, policyfiles, config files and other artifacts for managing systems with Chef Infra will live. We strongly recommend storing this repository in a version control system such as Git and treating it like source code.
+This Chef Repository repository contains the cookbooks containing the solution for following workshops at https://github.com/chef-cft/workshops
 
-## Repository Directories
+- 1_MongoDB - https://github.com/chef-cft/workshops/tree/master/1_MongoDB
+- 2_Tomcat - https://github.com/chef-cft/workshops/tree/master/2_Tomcat
 
-This repository contains several directories, and each directory contains a README file that describes what it is for in greater detail, and how to use it for managing your systems with Chef.
+## Instreuction to run the cookbook
 
-- `cookbooks/` - Cookbooks you download or create.
-- `data_bags/` - Store data bags and items in .json in the repository.
-- `roles/` - Store roles in .rb or .json in the repository.
-- `environments/` - Store environments in .rb or .json in the repository.
+Step 1: git the repository using following command:
+  https://github.com/varunsharma5/chef-workshop-solution.git
 
 ## Configuration
 

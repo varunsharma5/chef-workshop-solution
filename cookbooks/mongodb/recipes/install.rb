@@ -1,3 +1,8 @@
+#
+# Cookbook:: tomcat
+# Recipe:: install
+#
+
 # Create a /etc/yum.repos.d/mongodb.repo file to hold the following configuration information for the MongoDB repository
 directory '/etc/yum.repos.d'
 

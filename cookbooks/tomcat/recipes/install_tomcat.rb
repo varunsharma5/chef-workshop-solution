@@ -3,6 +3,8 @@
 # Recipe:: install_tomcat
 #
 
+
+# Create a user for tomcat
 group 'tomcat'
 
 directory '/opt/tomcat'
@@ -13,6 +15,8 @@ user 'tomcat' do
   shell '/bin/nologin'
   action :create
 end
+
+# Download the Tomcat Binary
 
 tmp_tomcat_file = Chef::Config[:file_cache_path] + '/tomcat.tar.gz'
 
@@ -28,11 +32,13 @@ end
 #   action :extract
 # end
 
+# Extract the Tomcat Binary
 execute 'extract_tomcat' do
   command 'sudo tar xvf tomcat.tar.gz -C /opt/tomcat --strip-components=1'
   cwd '/tmp'
 end
 
+# Update the Permissions
 execute 'update_permission' do
   cwd '/opt/tomcat'
   command 'sudo chgrp -R tomcat /opt/tomcat'
@@ -41,14 +47,17 @@ execute 'update_permission' do
   command 'sudo chown -R tomcat webapps/ work/ temp/ logs/ bin/ lib/ conf/'
 end
 
+# Install the Systemd Unit File
 template '/etc/systemd/system/tomcat.service' do
   source 'tomcat.service.erb'
 end
 
+# Reload Systemd to load the Tomcat Unit file
 systemd_unit 'daemon-reload' do
   action :reload
 end
 
+# Ensure tomcat is started and enabled
 service 'tomcat' do
   action [:enable, :start]
 end
