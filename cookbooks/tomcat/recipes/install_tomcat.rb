@@ -31,7 +31,7 @@ execute 'update_permission' do
   command 'sudo chgrp -R tomcat /opt/tomcat'
   command 'sudo chmod -R g+r conf'
   command 'sudo chmod g+x conf'
-  command 'sudo chown -R tomcat webapps/ work/ temp/ logs/ bin/'
+  command 'sudo chown -R tomcat webapps/ work/ temp/ logs/ bin/ lib'
 end
 
 template '/etc/systemd/system/tomcat.service' do
