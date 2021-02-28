@@ -5,7 +5,7 @@ This Chef repository contains the cookbooks containing the solutions for followi
 - 1_MongoDB - https://github.com/chef-cft/workshops/tree/master/1_MongoDB
 - 2_Tomcat - https://github.com/chef-cft/workshops/tree/master/2_Tomcat
 
-## Instructions to run the cookbook
+## Instructions to run the cookbooks
 
 #### Prerequisites
 - The latest version of Chef Workstation.
