@@ -1,3 +1,8 @@
+#
+# Cookbook:: tomcat
+# Recipe:: install_tomcat
+#
+
 group 'tomcat'
 
 directory '/opt/tomcat'
