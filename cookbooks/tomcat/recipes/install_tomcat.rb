@@ -26,25 +26,12 @@ execute 'extract_tomcat' do
   cwd '/tmp'
 end
 
-
-directory '/op/tomcat/webapp' do
-  recursive true
-  owner 'tomcat'
-end
-
-directory '/op/tomcat/work' do 
-  recursive true
-  owner 'tomcat'
-end
-
-directory '/op/tomcat/temp' do 
-  recursive true
-  owner 'tomcat'
-end
-
-directory '/op/tomcat/logs' do 
-  recursive true
-  owner 'tomcat'
+execute 'update_permission' do 
+  cwd '/opt/tomcat'
+  command 'sudo chgrp -R tomcat /opt/tomcat'
+  command 'sudo chmod -R g+r conf'
+  command 'sudo chmod g+x conf'
+  command 'sudo chown -R tomcat webapps/ work/ temp/ logs/ bin/'
 end
 
 template '/etc/systemd/system/tomcat.service' do
