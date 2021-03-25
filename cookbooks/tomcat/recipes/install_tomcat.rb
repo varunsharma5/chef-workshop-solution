@@ -18,19 +18,13 @@ end
 
 # Download the Tomcat Binary
 
-tmp_tomcat_file = Chef::Config[:file_cache_path] + '/tomcat.tar.gz'
+tmp_tomcat_file = '/tmp/tomcat.tar.gz'
 
 remote_file tmp_tomcat_file do
   # source 'http://apache.cs.utah.edu/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz' => this is not working ...404
-  source 'https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.63/bin/apache-tomcat-8.5.63.tar.gz' # use attiribute to get the tomcat version
+  source 'https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.64/bin/apache-tomcat-8.5.64.tar.gz'
   action :create
 end
-
-# archive_file '/tmp/tomcat.tar.gz' do
-#   destination '/opt/tomcat'
-#   overwrite true
-#   action :extract
-# end
 
 # Extract the Tomcat Binary
 execute 'extract_tomcat' do
